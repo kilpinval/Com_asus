@@ -1,0 +1,19 @@
+La imagen muestra una tarjeta de diagnóstico POST para bus ISA con una pantalla de 4 dígitos que muestra el código hexadecimal 2.9.4 (visualizado como "2.9.4" con puntos). Este tipo de tarjeta se conecta a una ranura ISA de la placa base para leer los códigos de autodiagnóstico (POST) que la BIOS va generando durante el arranque.
+
+🔍 Interpretación del código 2.9.4
+
+El código que aparece en la pantalla corresponde a un punto de control (checkpoint) del proceso POST. La interpretación exacta depende del fabricante de la BIOS (AMI, Award, Phoenix, etc.) y de la versión específica de la placa base.
+
+Dado que no se puede determinar la BIOS con solo ver la tarjeta, lo más probable es que el sistema se haya quedado colgado (hang) en esa etapa. Los códigos con puntos suelen ser checkpoints de BIOS que han fallado, deteniendo el proceso de arranque.
+
+🛠️ Pasos para solucionarlo
+
+Como el diagnóstico exacto requiere la tabla de códigos de tu placa base, te sugiero seguir este orden:
+
+1. Identifica tu placa base y BIOS: Busca el modelo exacto de la placa y el fabricante de la BIOS (suele estar impreso en un chip cerca de la pila). Consulta el manual o la web oficial para buscar el significado del código 2.9.4. A veces, los códigos con puntos en la pantalla representan un código hexadecimal de dos dígitos con un punto de separación (por ejemplo, 29 y 4).
+2. Prueba el hardware mínimo: Apaga el equipo, desconecta todo (discos, tarjetas de expansión, USB) y deja solo la CPU, un módulo de RAM y la tarjeta de video (si la CPU no tiene gráficos integrados). Si el código cambia o el equipo avanza, el problema está en uno de los componentes que retiraste.
+3. Limpia y resiembra la RAM: Es una causa muy común de bloqueos tempranos. Retira los módulos de memoria, limpia los contactos con una goma de borrar suave y vuelve a insertarlos firmemente hasta que los clips de seguridad hagan clic.
+4. Revisa la tarjeta POST: Asegúrate de que esté bien insertada en la ranura ISA y que los LEDs rojos (que indican voltajes como +5V o +12V) estén encendidos. Si los LEDs no encienden, la tarjeta no está recibiendo energía correctamente.
+5. Limpia el CMOS: Localiza la pila CR2032 en la placa base, retírala durante unos minutos y vuelve a colocarla. Esto restablece la configuración de la BIOS y a veces resuelve bloqueos por configuraciones corruptas.
+
+Si después de probar el hardware mínimo el código sigue siendo 2.9.4, es muy probable que el problema esté en la placa base o en la CPU. Si puedes decirme el modelo de tu placa base, puedo intentar buscar la tabla de códigos específica para esa BIOS.
