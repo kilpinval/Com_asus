@@ -1,0 +1,14 @@
+En la placa ASUS M3A78-EM, los pines CLRTC (Clear RTC RAM) se encuentran generalmente en la parte inferior de la placa, cerca de la batería de botón (pila CMOS). Están claramente etiquetados con la serigrafía "CLRTC" y constan de 3 pines con un puente (jumper) que, por defecto, cubre los pines 1-2 .
+
+🔧 Cómo usar los pines CLRTC para limpiar la CMOS
+
+Para restablecer la configuración de la BIOS (incluyendo contraseñas y configuración de arranque), sigue estos pasos exactos:
+
+1. Apaga y desconecta el equipo de la corriente eléctrica.
+2. Retira la batería de botón (pila CR2032) de la placa base .
+3. Mueve el puente: Retira el pequeño capuchón de plástico (jumper) que cubre los pines 1-2 y colócalo cubriendo los pines 2-3.
+4. Espera unos 5 a 10 segundos con el puente en esa posición .
+5. Restaura el puente: Vuelve a colocar el capuchón en su posición original (pines 1-2). Es muy importante que lo devuelvas a esta posición para que el equipo pueda arrancar .
+6. Reinstala la batería, conecta la corriente y enciende el equipo. Entra en la BIOS (presionando <Supr> o <Del>) para reconfigurar la fecha y hora.
+
+⚠️ Advertencia: Nunca dejes el puente en la posición 2-3 de forma permanente. Si lo haces, el sistema no arrancará (fallará el POST).
