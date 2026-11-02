@@ -1,0 +1,20 @@
+Los códigos C5 y C4 que mencionas corresponden a puntos de control (checkpoints) específicos del proceso POST (Power-On Self-Test) de la BIOS. El significado exacto puede variar ligeramente según el fabricante de la BIOS (Award, AMI, Phoenix, etc.) y el modelo de la placa base, pero hay definiciones bastante estándar para estos códigos en el contexto de tarjetas de diagnóstico.
+
+🔍 Significado de los códigos C4 y C5
+
+· C4 (Special Display Handling / Initialize system error handler): Este código suele indicar una etapa de manejo especial de visualización o la inicialización del manejador de errores del sistema . En algunas BIOS, se asocia con la preparación de la pantalla o con la gestión de errores tempranos. Si el sistema se detiene aquí, a menudo se relaciona con problemas de memoria RAM o con la detección de la tarjeta gráfica .
+· C5 (Early Shadow / Call chipset hook): Este checkpoint tiene descripciones que varían según la fuente. Comúnmente se refiere a la "Sombra Temprana" (Early Shadow) o a la llamada a un "hook" del chipset para copiar el BIOS a la RAM de sombra (Shadow RAM) para acelerar el POST . Otras fuentes indican que puede implicar limpiar la pantalla o borrar el flag de error de la CMOS . Si el sistema se cuelga en C5, puede ser un indicio de problemas con la memoria RAM o con la configuración del chipset .
+
+🛠️ ¿Qué hacer si el sistema se queda en C4 o C5?
+
+Dado que tu tarjeta muestra 2.9.4 (y mencionas C5 y C4), es muy probable que el equipo esté teniendo problemas para inicializar el hardware básico. Los códigos C4 y C5 en placas modernas (como las Gigabyte o ASUS) suelen estar reservados para depuración y a menudo apuntan a la memoria RAM o a la placa base.
+
+Te sugiero probar lo siguiente, en orden:
+
+1. Prueba con un solo módulo de RAM: Apaga el equipo, deja solo un stick de memoria en el primer slot (generalmente el más cercano al CPU) y enciende. Si no arranca, prueba con el otro módulo y en diferentes ranuras. Esto ayuda a descartar que un módulo o un slot estén defectuosos .
+2. Limpia los contactos de la RAM: Retira los módulos y limpia sus contactos dorados suavemente con una goma de borrar. Vuelve a insertarlos asegurándote de que encajen bien.
+3. Revisa la tarjeta gráfica: Si tienes una GPU dedicada, retírala y usa la salida de video integrada de la CPU (si tu procesador la tiene). A veces, una GPU mal asentada o defectuosa causa que el POST se detenga en códigos de visualización (como C4).
+4. Resetear la CMOS: Apaga el equipo, desconecta el cable de corriente, retira la pila de la placa base durante unos minutos y vuelve a colocarla. Esto restablece la BIOS a sus valores de fábrica y puede resolver bloqueos por configuraciones corruptas .
+5. Revisa el manual de tu placa base: Si puedes identificar el modelo exacto de tu placa, busca en el manual o en la web del fabricante la tabla de "Debug Codes" o "POST Codes" específica para tu modelo, ya que la definición exacta de C4 y C5 puede variar.
+
+Si después de probar con la RAM y resetear la CMOS el código persiste, es posible que haya un problema más serio con la placa base o el chipset.
