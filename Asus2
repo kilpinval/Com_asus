@@ -1,0 +1,17 @@
+Gracias por el dato. Con el modelo ASUS M3A78-EM confirmado, la situación se aclara bastante: se trata de una placa base con chipset AMD 780G / SB700 y BIOS AMI .
+
+Lamentablemente, los manuales oficiales de ASUS para esta placa no incluyen una tabla pública con el significado exacto de los códigos POST como C4 o C5. Sin embargo, por experiencia en reparación de esta placa en concreto (y como mencionan en foros técnicos), los códigos C5 suelen aparecer cuando hay problemas de inicialización de memoria o de comunicación con el chipset .
+
+🛠️ Pasos concretos para tu placa M3A78-EM
+
+Dado que es una placa algo antigua (DDR2, Socket AM2+), el problema suele estar en componentes que fallan con el tiempo. Te sugiero este orden:
+
+1. Prueba solo con un módulo de RAM: Esta placa tiene 4 ranuras DDR2. Retira todos los módulos y deja solo uno en la ranura más cercana al procesador. Si el código cambia, prueba con otro módulo y en otra ranura. Es la causa más común de bloqueos en C5 o C4.
+2. Limpia los contactos de la RAM: Con el tiempo, los contactos dorados se sulfatan. Pásales una goma de borrar suavemente y vuelve a insertarlos con firmeza.
+3. Revisa la pila CMOS: Esta placa usa una pila CR2032. Si está agotada (menos de 3V), la BIOS puede corromperse y detener el POST. Cámbiala por una nueva y, tras ponerla, resetea la CMOS (quita la pila, puentea los pines CLRTC durante 10 segundos y vuelve a ponerla).
+4. Usa la gráfica integrada: Esta placa tiene video integrado (Radeon HD 3200). Si tienes una tarjeta gráfica dedicada puesta, quítala y conecta el monitor directamente a la salida de video de la placa. A veces una GPU defectuosa o mal asentada detiene el POST en códigos como C4.
+5. Revisa el chip de BIOS: Si nada de lo anterior funciona, es posible que la BIOS esté corrupta. En esta placa se puede recuperar con la función CrashFree BIOS 3 de ASUS (poniendo un USB con el archivo .ROM y encendiendo) o reprogramando el chip con un programador externo .
+
+Si tras probar la RAM y resetear la CMOS el código persiste, el problema apunta a un fallo en el chipset (puente norte/sur) o en la propia BIOS, que en esta placa ya requeriría herramientas de soldadura o reprogramación para intentar salvarla.
+
+¿Quieres que te detalle cómo usar la función CrashFree BIOS 3 para intentar recuperarla?
